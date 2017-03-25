@@ -127,11 +127,7 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
-
-    conn, c = connect()
-    query = "SELECT * FROM playerstandings;"
-    c.execute(query)
-    pair_list = c.fetchall()
+    pair_list = playerStandings()
 
     pair_result = []
 
@@ -147,5 +143,4 @@ def swissPairings():
     for i in range(0, len(pair_result), 1):
         print pair_result[i]
 
-    conn.close()
     return pair_result
